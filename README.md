@@ -1,4 +1,4 @@
-### ⚠️ All credits go to Coderflex ⚠️
+# ⚠️ All credits go to Coderflex ⚠️
 This package was made as a temporary solution supporting Laravel 11. All credits goes to [coderflexx/laravel-ticket](https://github.com/coderflexx/laravel-ticket)
 
 <p align="center">
