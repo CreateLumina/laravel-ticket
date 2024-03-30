@@ -1,12 +1,15 @@
+### ⚠️ All credits go to Coderflex ⚠️
+This package was made as a temporary solution supporting Laravel 11. All credits goes to [coderflexx/laravel-ticket](https://github.com/coderflexx/laravel-ticket)
+
 <p align="center">
     <img src="art/logo.png" alt="Laravisit Logo" width="300">
     <br><br>
 </p>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/coderflex/laravel-ticket.svg?style=flat-square)](https://packagist.org/packages/coderflex/laravel-ticket)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/lumina/tickets.svg?style=flat-square)](https://packagist.org/packages/lumina/tickets)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/coderflexx/laravel-ticket/run-tests.yml?branch=main&label=test)](https://github.com/coderflexx/laravel-ticket/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/coderflexx/laravel-ticket/phpstan.yml?branch=main&label=code%20style)](https://github.com/coderflexx/laravel-ticket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/coderflex/laravel-ticket.svg?style=flat-square)](https://packagist.org/packages/coderflex/laravel-ticket)
+[![Total Downloads](https://img.shields.io/packagist/dt/lumina/tickets.svg?style=flat-square)](https://packagist.org/packages/lumina/tickets)
 
 - [Introduction](#introduction)
 - [Installation](#installation)
