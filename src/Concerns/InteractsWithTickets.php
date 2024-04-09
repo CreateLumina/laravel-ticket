@@ -3,7 +3,6 @@
 namespace Coderflex\LaravelTicket\Concerns;
 
 use Coderflex\LaravelTicket\Enums\Status;
-use Illuminate\Database\Eloquent\Model;
 
 trait InteractsWithTickets
 {
@@ -45,17 +44,5 @@ trait InteractsWithTickets
     public function isClosed(): bool
     {
         return !$this->isOpen();
-    }
-
-    /**
-     * Add new message on an existing ticket as a custom user
-     */
-    public function assignTo(Model|int $user): self
-    {
-        $this->update([
-            'assigned_to' => $user,
-        ]);
-
-        return $this;
     }
 }

@@ -34,7 +34,6 @@ class TestCase extends Orchestra
             include __DIR__ . '/../database/migrations/create_tickets_table.php.stub',
             include __DIR__ . '/../database/migrations/create_categories_table.php.stub',
             include __DIR__ . '/../database/migrations/create_messages_table.php.stub',
-            include __DIR__ . '/../database/migrations/add_assigned_to_column_into_tickets_table.php.stub',
 
             // Many to Many tables
             include __DIR__ . '/../database/migrations/create_category_ticket_table.php.stub',

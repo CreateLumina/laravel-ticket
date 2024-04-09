@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $title
  * @property string $message
  * @property string $status
- * @property int $assigned_to
  */
 class Ticket extends Model
 {
@@ -40,14 +39,6 @@ class Ticket extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(config('auth.providers.users.model'));
-    }
-
-    /**
-     * Get Assigned To User RelationShip
-     */
-    public function assignedToUser(): BelongsTo
-    {
-        return $this->belongsTo(config('auth.providers.users.model'), 'assigned_to');
     }
 
     /**
