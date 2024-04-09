@@ -8,12 +8,10 @@ it('can store a category', function () {
 
     $category = Category::factory()->create([
         'name' => 'Support',
-        'slug' => 'supoort',
     ]);
 
     $this->assertDatabaseHas('categories', [
         'name' => 'Support',
-        'slug' => 'supoort',
     ]);
 
     $this->assertEquals($category->count(), 1);

@@ -148,7 +148,6 @@ public function createCategory()
 | ----------- | ----------- | ---------- |
 | ID          | `integer`   | `NOT NULL` |
 | name        | `string`    | `NULL`     |
-| slug        | `string`    | `NULL`     |
 | created_at  | `timestamp` | `NULL`     |
 | updated_at  | `timestamp` | `NULL`     |
 

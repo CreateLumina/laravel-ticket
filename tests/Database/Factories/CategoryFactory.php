@@ -14,7 +14,6 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $name = $this->faker->name(),
-            'slug' => Str::slug($name),
         ];
     }
 }
