@@ -82,21 +82,6 @@ class Ticket extends Model
     }
 
     /**
-     * Get Labels RelationShip
-     */
-    public function labels(): BelongsToMany
-    {
-        $table = config('laravel_ticket.table_names.label_ticket', 'label_ticket');
-
-        return $this->belongsToMany(
-            Label::class,
-            $table['table'],
-            $table['columns']['ticket_foreign_id'],
-            $table['columns']['label_foreign_id'],
-        );
-    }
-
-    /**
      * Get the table associated with the model.
      *
      * @return string

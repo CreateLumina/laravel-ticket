@@ -22,10 +22,6 @@ return [
          */
         'categories' => 'categories',
         /**
-         * Labels table for the tickets
-         */
-        'labels' => 'labels',
-        /**
          * Messages table to appears in the ticket
          */
         'messages' => [
@@ -40,21 +36,6 @@ return [
              */
             'columns' => [
                 'user_foreign_id' => 'user_id',
-                'ticket_foreign_id' => 'ticket_id',
-            ],
-        ],
-        /**
-         * Many to Many relationship between the tickets table
-         * and the labels table, if you changed the one of the
-         * tables above, you may consider change the columns
-         * below.
-         *
-         * @see https://laravel.com/docs/9.x/eloquent-relationships#many-to-many
-         */
-        'label_ticket' => [
-            'table' => 'label_ticket',
-            'columns' => [
-                'label_foreign_id' => 'label_id',
                 'ticket_foreign_id' => 'ticket_id',
             ],
         ],
