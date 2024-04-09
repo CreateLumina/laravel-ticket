@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Tests;
+namespace Lumina\Tickets\Tests;
 
-use Coderflex\LaravelTicket\LaravelTicketServiceProvider;
+use Lumina\Tickets\LaravelTicketServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         config()->set('app.key', '6rE9Nz59bGRbeMATftriyQjrpF7DcOQm');
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'Coderflex\\LaravelTicket\\Tests\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn(string $modelName) => 'Lumina\\Tickets\\Tests\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

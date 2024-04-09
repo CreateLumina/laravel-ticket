@@ -41,7 +41,7 @@ __Laravel Ticket__ package, is a Backend API to handle your ticket system, with 
 You can install the package via composer:
 
 ```bash
-composer require coderflex/laravel-ticket
+composer require lumina/tickets
 ```
 
 ## Configuration
@@ -69,8 +69,8 @@ Add `HasTickets` trait into your `User` model, along with `CanUseTickets` interf
 
 ```php
 ...
-use Coderflex\LaravelTicket\Concerns\HasTickets;
-use Coderflex\LaravelTicket\Contracts\CanUseTickets;
+use Lumina\Tickets\Concerns\HasTickets;
+use Lumina\Tickets\Contracts\CanUseTickets;
 ...
 class User extends Model implements CanUseTickets
 {
@@ -89,8 +89,8 @@ You can associate as many as `categories` into a single ticket.
 Here is an example
 
 ```php
-use Coderflex\LaravelTicket\Models\Ticket;
-use Coderflex\LaravelTicket\Models\Category;
+use Lumina\Tickets\Models\Ticket;
+use Lumina\Tickets\Models\Category;
 
 ...
 public function store(Request $request)
@@ -221,7 +221,7 @@ namespace App\Models\Ticket;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Ticket extends \Coderflex\LaravelTicket\Models\Ticket implements HasMedia
+class Ticket extends \Lumina\Tickets\Models\Ticket implements HasMedia
 {
     use InteractsWithMedia;
 }

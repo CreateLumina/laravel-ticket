@@ -1,7 +1,7 @@
 <?php
 
-use Coderflex\LaravelTicket\Models\Ticket;
-use Coderflex\LaravelTicket\Tests\Models\User;
+use Lumina\Tickets\Models\Ticket;
+use Lumina\Tickets\Tests\Models\User;
 
 it('filters tickets by status', function () {
     Ticket::factory()

@@ -1,8 +1,8 @@
 <?php
 
-use Coderflex\LaravelTicket\Models\Category;
-use Coderflex\LaravelTicket\Models\Ticket;
-use Coderflex\LaravelTicket\Tests\Models\User;
+use Lumina\Tickets\Models\Category;
+use Lumina\Tickets\Models\Ticket;
+use Lumina\Tickets\Tests\Models\User;
 
 it('creates a ticket with associated user', function () {
     $user = User::factory()->create();

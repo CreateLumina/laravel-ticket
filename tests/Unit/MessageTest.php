@@ -1,7 +1,7 @@
 <?php
 
-use Coderflex\LaravelTicket\Models\Message;
-use Coderflex\LaravelTicket\Models\Ticket;
+use Lumina\Tickets\Models\Message;
+use Lumina\Tickets\Models\Ticket;
 
 it('can store a message', function () {
     $ticket = Ticket::factory()->create([

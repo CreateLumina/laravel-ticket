@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Tests\Database\Factories;
+namespace Lumina\Tickets\Tests\Database\Factories;
 
-use Coderflex\LaravelTicket\Models\Category;
+use Lumina\Tickets\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

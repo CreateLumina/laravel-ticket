@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Concerns;
+namespace Lumina\Tickets\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
 

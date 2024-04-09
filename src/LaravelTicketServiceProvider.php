@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderflex\LaravelTicket;
+namespace Lumina\Tickets;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -15,7 +15,7 @@ class LaravelTicketServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-ticket')
+            ->name('tickets')
             ->hasConfigFile('laravel_ticket')
             ->hasMigrations(
                 'create_tickets_table',

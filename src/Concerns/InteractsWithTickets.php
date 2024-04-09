@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Concerns;
+namespace Lumina\Tickets\Concerns;
 
-use Coderflex\LaravelTicket\Enums\Status;
+use Lumina\Tickets\Enums\Status;
 
 trait InteractsWithTickets
 {

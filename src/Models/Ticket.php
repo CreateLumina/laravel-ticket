@@ -1,9 +1,9 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Models;
+namespace Lumina\Tickets\Models;
 
-use Coderflex\LaravelTicket\Concerns;
-use Coderflex\LaravelTicket\Scopes\TicketScope;
+use Lumina\Tickets\Concerns;
+use Lumina\Tickets\Scopes\TicketScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
- * Coderflex\LaravelTicket\Models\Ticket
+ * Lumina\Tickets\Models\Ticket
  *
  * @property string $uuid
  * @property int $user_id

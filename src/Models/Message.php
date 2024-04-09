@@ -1,13 +1,13 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Models;
+namespace Lumina\Tickets\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
- * Coderflex\LaravelTicket\Models\Message
+ * Lumina\Tickets\Models\Message
  *
  * @property int $user_id
  * @property string $message

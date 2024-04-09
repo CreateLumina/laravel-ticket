@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Scopes;
+namespace Lumina\Tickets\Scopes;
 
-use Coderflex\LaravelTicket\Enums\Status;
+use Lumina\Tickets\Enums\Status;
 use Illuminate\Database\Eloquent\Builder;
 
 trait TicketScope

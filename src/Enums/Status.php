@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Enums;
+namespace Lumina\Tickets\Enums;
 
 enum Status: string
 {

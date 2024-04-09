@@ -1,10 +1,10 @@
 <?php
 
-namespace Coderflex\LaravelTicket\Tests\Database\Factories;
+namespace Lumina\Tickets\Tests\Database\Factories;
 
-use Coderflex\LaravelTicket\Models\Message;
-use Coderflex\LaravelTicket\Models\Ticket;
-use Coderflex\LaravelTicket\Tests\Models\User;
+use Lumina\Tickets\Models\Message;
+use Lumina\Tickets\Models\Ticket;
+use Lumina\Tickets\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MessageFactory extends Factory

@@ -19,7 +19,7 @@
     verbose="true"
 >
     <testsuites>
-        <testsuite name="Coderflex Test Suite">
+        <testsuite name="Lumina Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
