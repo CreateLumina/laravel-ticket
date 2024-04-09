@@ -45,12 +45,6 @@ composer require lumina/tickets
 
 ## Configuration
 
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="ticket-config"
-```
-
 You can publish and run the migrations with:
 
 ```bash

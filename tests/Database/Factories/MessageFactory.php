@@ -13,11 +13,9 @@ class MessageFactory extends Factory
 
     public function definition()
     {
-        $tableName = config('laravel_ticket.table_names.messages', 'messages');
-
         return [
             'user_id' => User::factory(),
-            $tableName['columns']['ticket_foreign_id'] => Ticket::factory(),
+            'ticket_id' => Ticket::factory(),
             'message' => $this->faker->paragraph(2),
         ];
     }

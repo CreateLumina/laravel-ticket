@@ -28,11 +28,9 @@ class Message extends Model
      */
     public function ticket(): BelongsTo
     {
-        $tableName = config('laravel_ticket.table_names.messages', 'messages');
-
         return $this->belongsTo(
             Ticket::class,
-            $tableName['columns']['ticket_foreign_id']
+            'ticket_id'
         );
     }
 
@@ -41,11 +39,9 @@ class Message extends Model
      */
     public function user(): BelongsTo
     {
-        $tableName = config('laravel_ticket.table_names.messages', 'message');
-
         return $this->belongsTo(
             config('auth.providers.users.model'),
-            $tableName['columns']['user_foreign_id']
+            'user_id'
         );
     }
 
@@ -56,9 +52,6 @@ class Message extends Model
      */
     public function getTable()
     {
-        return config(
-            'laravel_ticket.table_names.messages.table',
-            parent::getTable()
-        );
+        return 'messages';
     }
 }

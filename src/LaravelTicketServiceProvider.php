@@ -16,7 +16,6 @@ class LaravelTicketServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('tickets')
-            ->hasConfigFile('laravel_ticket')
             ->hasMigrations(
                 'create_tickets_table',
                 'create_messages_table',

@@ -11,12 +11,7 @@ it('can store a category', function () {
         'slug' => 'supoort',
     ]);
 
-    $tableName = config(
-        'laravel_ticket.table_names.categories',
-        'categories'
-    );
-
-    $this->assertDatabaseHas($tableName, [
+    $this->assertDatabaseHas('categories', [
         'name' => 'Support',
         'slug' => 'supoort',
     ]);

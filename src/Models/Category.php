@@ -32,9 +32,6 @@ class Category extends Model
      */
     public function getTable()
     {
-        return config(
-            'laravel_ticket.table_names.categories',
-            parent::getTable()
-        );
+        return 'categories';
     }
 }

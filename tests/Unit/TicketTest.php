@@ -8,12 +8,7 @@ it('can store a ticket', function () {
         'message' => 'Another Issue as always',
     ]);
 
-    $tableName = config(
-        'laravel_ticket.table_names.tickets',
-        'tickets'
-    );
-
-    $this->assertDatabaseHas($tableName, [
+    $this->assertDatabaseHas('tickets', [
         'title' => 'IT Support',
         'message' => 'Another Issue as always',
     ]);
