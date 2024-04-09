@@ -2,7 +2,6 @@
 
 namespace Coderflex\LaravelTicket\Scopes;
 
-use Coderflex\LaravelTicket\Enums\Priority;
 use Coderflex\LaravelTicket\Enums\Status;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -54,38 +53,6 @@ trait TicketScope
     public function scopeUnlocked(Builder $builder): Builder
     {
         return $builder->where('is_locked', false);
-    }
-
-    /**
-     * Get custom priority tickets
-     */
-    public function scopeWithPriority(Builder $builder, string $priority): Builder
-    {
-        return $builder->where('priority', $priority);
-    }
-
-    /**
-     * Get low priority tickets
-     */
-    public function scopeWithLowPriority(Builder $builder): Builder
-    {
-        return $builder->where('priority', Priority::LOW->value);
-    }
-
-    /**
-     * Get normal priority tickets
-     */
-    public function scopeWithNormalPriority(Builder $builder): Builder
-    {
-        return $builder->where('priority', Priority::NORMAL->value);
-    }
-
-    /**
-     * Get high priority tickets
-     */
-    public function scopeWithHighPriority(Builder $builder): Builder
-    {
-        return $builder->where('priority', Priority::HIGH->value);
     }
 
     /**

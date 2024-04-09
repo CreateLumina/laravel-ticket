@@ -17,7 +17,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int $user_id
  * @property string $title
  * @property string $message
- * @property string $priority
  * @property string $status
  * @property bool $is_resolved
  * @property bool $is_locked
