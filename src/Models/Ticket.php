@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $title
  * @property string $message
  * @property string $status
- * @property bool $is_locked
  * @property int $assigned_to
  */
 class Ticket extends Model

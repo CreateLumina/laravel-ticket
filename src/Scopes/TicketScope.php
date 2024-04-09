@@ -24,22 +24,6 @@ trait TicketScope
     }
 
     /**
-     * Get locked tickets
-     */
-    public function scopeLocked(Builder $builder): Builder
-    {
-        return $builder->where('is_locked', true);
-    }
-
-    /**
-     * Get unlocked tickets
-     */
-    public function scopeUnlocked(Builder $builder): Builder
-    {
-        return $builder->where('is_locked', false);
-    }
-
-    /**
      * Get archived tickets
      */
     public function scopeArchived(Builder $builder): Builder

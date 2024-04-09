@@ -135,7 +135,6 @@ public function createCategory()
 | title       | `string`    | `NOT NULL` |
 | message     | `string`    | `NULL`     |
 | status      | `string`    | `open`     |
-| is_locked   | `boolean`   | `false`    |
 | assigned_to | `integer`   | `NULL`     |
 | created_at  | `timestamp` | `NULL`     |
 | updated_at  | `timestamp` | `NULL`     |
@@ -167,20 +166,16 @@ public function createCategory()
 ### Ticket API Methods
 The `ticket` model came with handy methods to use, to make your building process easy and fast, and here is the list of the available __API__:
 
-| Method           | Arguments | Description                     | Example                                              | Chainable |
-| ---------------- | --------- | ------------------------------- | ---------------------------------------------------- | --------- |
-| `archive`        | `void`    | archive the ticket              | `$ticket->archive()`                                 | ✓         |
-| `close`          | `void`    | close the ticket                | `$ticket->close()`                                   | ✓         |
-| `reopen`         | `void`    | reopen a closed ticket          | `$ticket->reopen()`                                  | ✓         |
-| `markAsLocked`   | `void`    | mark the ticket as locked       | `$ticket->markAsLocked()`                            | ✓         |
-| `markAsUnlocked` | `void`    | mark the ticket as unlocked     | `$ticket->markAsUnlocked()`                          | ✓         |
-| `markAsArchived` | `void`    | mark the ticket as archived     | `$ticket->markAsArchived()`                          | ✓         |
-| `isArchived`     | `void`    | check if the ticket archived    | `$ticket->isArchived()`                              | ✗         |
-| `isOpen`         | `void`    | check if the ticket open        | `$ticket->isOpen()`                                  | ✗         |
-| `isClosed`       | `void`    | check if the ticket closed      | `$ticket->isClosed()`                                | ✗         |
-| `isLocked`       | `void`    | check if the ticket is locked   | `$ticket->isLocked()`                                | ✗         |
-| `isUnlocked`     | `void`    | check if the ticket is unlocked | `$ticket->isUnlocked()`                              | ✗         |
-| `assignTo`       | `void`    | assign ticket to a user         | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
+| Method           | Arguments | Description                  | Example                                              | Chainable |
+| ---------------- | --------- | ---------------------------- | ---------------------------------------------------- | --------- |
+| `archive`        | `void`    | archive the ticket           | `$ticket->archive()`                                 | ✓         |
+| `close`          | `void`    | close the ticket             | `$ticket->close()`                                   | ✓         |
+| `reopen`         | `void`    | reopen a closed ticket       | `$ticket->reopen()`                                  | ✓         |
+| `markAsArchived` | `void`    | mark the ticket as archived  | `$ticket->markAsArchived()`                          | ✓         |
+| `isArchived`     | `void`    | check if the ticket archived | `$ticket->isArchived()`                              | ✗         |
+| `isOpen`         | `void`    | check if the ticket open     | `$ticket->isOpen()`                                  | ✗         |
+| `isClosed`       | `void`    | check if the ticket closed   | `$ticket->isClosed()`                                | ✗         |
+| `assignTo`       | `void`    | assign ticket to a user      | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
 
 The __Chainable__ column, is showing the state for the method, that if it can be chained or not, something like
 ```php
@@ -210,8 +205,6 @@ The `ticket` model has also a list of scopes to begin filter with.
 | `opened`     | `void`    | get the opened tickets     | `Ticket::opened()->get()`     |
 | `archived`   | `void`    | get the archived tickets   | `Ticket::archived()->get()`   |
 | `unArchived` | `void`    | get the unArchived tickets | `Ticket::unArchived()->get()` |
-| `locked`     | `void`    | get the locked tickets     | `Ticket::locked()->get()`     |
-| `unlocked`   | `void`    | get the unlocked tickets   | `Ticket::unlocked()->get()`   |
 
 ### Category Scopes
 | Method   | Arguments | Description                  | Example                      |

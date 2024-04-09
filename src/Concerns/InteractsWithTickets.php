@@ -68,46 +68,6 @@ trait InteractsWithTickets
     }
 
     /**
-     * Determine if the ticket is locked
-     */
-    public function isLocked(): bool
-    {
-        return $this->is_locked;
-    }
-
-    /**
-     * Determine if the ticket is unresolved
-     */
-    public function isUnlocked(): bool
-    {
-        return !$this->isLocked();
-    }
-
-    /**
-     * Mark the ticket as locked
-     */
-    public function markAsLocked(): self
-    {
-        $this->update([
-            'is_locked' => true,
-        ]);
-
-        return $this;
-    }
-
-    /**
-     * Mark the ticket as locked
-     */
-    public function markAsUnlocked(): self
-    {
-        $this->update([
-            'is_locked' => false,
-        ]);
-
-        return $this;
-    }
-
-    /**
      * Mark the ticket as archived
      */
     public function markAsArchived(): self

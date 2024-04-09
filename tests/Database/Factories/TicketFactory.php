@@ -18,7 +18,6 @@ class TicketFactory extends Factory
             'title' => $this->faker->title(),
             'message' => $this->faker->paragraph(2),
             'status' => $this->faker->randomElement(['open', 'closed']),
-            'is_locked' => $this->faker->randomElement([true, false]),
         ];
     }
 }

@@ -29,24 +29,6 @@ it('filters tickets by status', function () {
     $this->assertEquals(Ticket::unArchived()->count(), 10);
 });
 
-it('filters tickets by locked status', function () {
-    Ticket::factory()
-        ->times(3)
-        ->create([
-            'is_locked' => true,
-        ]);
-
-    Ticket::factory()
-        ->times(9)
-        ->create([
-            'is_locked' => false,
-        ]);
-
-    $this->assertEquals(Ticket::count(), 12);
-    $this->assertEquals(Ticket::locked()->count(), 3);
-    $this->assertEquals(Ticket::unlocked()->count(), 9);
-});
-
 it('can close the ticket', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
@@ -95,26 +77,6 @@ it('can mark a ticket as archived', function () {
     $this->assertTrue($ticket->isArchived());
 });
 
-it('can mark a ticket as locked', function () {
-    $ticket = Ticket::factory()->create([
-        'is_locked' => false,
-    ]);
-
-    $ticket->markAsLocked();
-
-    $this->assertTrue($ticket->isLocked());
-});
-
-it('can mark a ticket as unlocked', function () {
-    $ticket = Ticket::factory()->create([
-        'is_locked' => true,
-    ]);
-
-    $ticket->markAsUnlocked();
-
-    $this->assertTrue($ticket->isUnlocked());
-});
-
 it('can mark a ticket as closed', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
@@ -131,30 +93,14 @@ it('can mark a ticket as reopened', function () {
     $this->assertTrue($ticket->isOpen());
 });
 
-it('can mark a ticket as locked & unlocked', function () {
-    $ticket = Ticket::factory()->create([
-        'is_locked' => false,
-    ]);
-
-    $lockedTicket = Ticket::factory()->create([
-        'is_locked' => true,
-    ]);
-
-    $this->assertTrue($ticket->isUnlocked());
-    $this->assertTrue($lockedTicket->isLocked());
-});
-
 it('ensures ticket methods are chainable', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
-        'is_locked' => false,
     ]);
 
-    $ticket->archive()
-        ->markAsLocked();
+    $ticket->archive();
 
     $this->assertTrue($ticket->isArchived());
-    $this->assertTrue($ticket->isLocked());
 });
 
 it('can delete a ticket', function () {
