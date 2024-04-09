@@ -130,10 +130,10 @@ public function createCategory()
 | Column Name | Type        | Default    |
 | ----------- | ----------- | ---------- |
 | ID          | `integer`   | `NOT NULL` |
-| UUID        | `string`    | `NULL`     |
+| UUID        | `string`    | `NOT NULL` |
 | user_id     | `integer`   | `NOT NULL` |
 | title       | `string`    | `NOT NULL` |
-| message     | `string`    | `NULL`     |
+| message     | `string`    | `NOT NULL` |
 | status      | `string`    | `open`     |
 | created_at  | `timestamp` | `NULL`     |
 | updated_at  | `timestamp` | `NULL`     |
@@ -145,7 +145,7 @@ public function createCategory()
 | ID          | `integer`   | `NOT NULL` |
 | user_id     | `integer`   | `NOT NULL` |
 | ticket_id   | `integer`   | `NOT NULL` |
-| message     | `string`    | `NULL`     |
+| message     | `string`    | `NOT NULL` |
 | created_at  | `timestamp` | `NULL`     |
 | updated_at  | `timestamp` | `NULL`     |
 
