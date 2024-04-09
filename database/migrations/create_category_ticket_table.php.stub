@@ -6,16 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
-        $tableName = config('laravel_ticket.table_names.category_ticket', 'category_ticket');
-
-        Schema::create($tableName['table'], function (Blueprint $table) use ($tableName) {
-            collect($tableName['columns'])->each(function ($column, $key) use ($table) {
-                $table->foreignId($column);
-            });
+        Schema::create('category_ticket', function (Blueprint $table) {
+            $table->foreignId('category_id');
+            $table->foreignId('ticket_id');
         });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('category_ticket');
     }
 };
