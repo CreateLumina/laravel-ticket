@@ -2,9 +2,8 @@
 
 namespace Lumina\Tickets\Tests\Database\Factories;
 
-use Lumina\Tickets\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
+use Lumina\Tickets\Models\Category;
 
 class CategoryFactory extends Factory
 {

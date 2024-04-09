@@ -2,9 +2,9 @@
 
 namespace Lumina\Tickets\Concerns;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Lumina\Tickets\Models\Message;
 use Lumina\Tickets\Models\Ticket;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasTickets
 {

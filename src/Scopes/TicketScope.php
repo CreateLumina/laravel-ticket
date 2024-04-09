@@ -2,8 +2,8 @@
 
 namespace Lumina\Tickets\Scopes;
 
-use Lumina\Tickets\Enums\Status;
 use Illuminate\Database\Eloquent\Builder;
+use Lumina\Tickets\Enums\Status;
 
 trait TicketScope
 {

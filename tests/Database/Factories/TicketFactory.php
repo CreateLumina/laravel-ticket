@@ -2,9 +2,9 @@
 
 namespace Lumina\Tickets\Tests\Database\Factories;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Lumina\Tickets\Models\Ticket;
 use Lumina\Tickets\Tests\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TicketFactory extends Factory
 {

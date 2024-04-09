@@ -2,8 +2,8 @@
 
 namespace Lumina\Tickets\Tests;
 
-use Lumina\Tickets\LaravelTicketServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Lumina\Tickets\LaravelTicketServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         config()->set('app.key', '6rE9Nz59bGRbeMATftriyQjrpF7DcOQm');
 
         Factory::guessFactoryNamesUsing(
-            fn(string $modelName) => 'Lumina\\Tickets\\Tests\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Lumina\\Tickets\\Tests\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
@@ -31,17 +31,17 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         $migrations = [
-            include __DIR__ . '/../database/migrations/create_tickets_table.php.stub',
-            include __DIR__ . '/../database/migrations/create_categories_table.php.stub',
-            include __DIR__ . '/../database/migrations/create_messages_table.php.stub',
+            include __DIR__.'/../database/migrations/create_tickets_table.php.stub',
+            include __DIR__.'/../database/migrations/create_categories_table.php.stub',
+            include __DIR__.'/../database/migrations/create_messages_table.php.stub',
 
             // Many to Many tables
-            include __DIR__ . '/../database/migrations/create_category_ticket_table.php.stub',
+            include __DIR__.'/../database/migrations/create_category_ticket_table.php.stub',
 
             // Tests Migration
-            include __DIR__ . '/Database/Migrations/create_users_table.php',
+            include __DIR__.'/Database/Migrations/create_users_table.php',
         ];
 
-        collect($migrations)->each(fn($migration) => $migration->up());
+        collect($migrations)->each(fn ($migration) => $migration->up());
     }
 }
