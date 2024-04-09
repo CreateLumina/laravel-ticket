@@ -135,7 +135,6 @@ public function createCategory()
 | title       | `string`    | `NOT NULL` |
 | message     | `string`    | `NULL`     |
 | status      | `string`    | `open`     |
-| is_resolved | `boolean`   | `false`    |
 | is_locked   | `boolean`   | `false`    |
 | assigned_to | `integer`   | `NULL`     |
 | created_at  | `timestamp` | `NULL`     |
@@ -168,32 +167,25 @@ public function createCategory()
 ### Ticket API Methods
 The `ticket` model came with handy methods to use, to make your building process easy and fast, and here is the list of the available __API__:
 
-| Method               | Arguments | Description                                   | Example                                              | Chainable |
-| -------------------- | --------- | --------------------------------------------- | ---------------------------------------------------- | --------- |
-| `archive`            | `void`    | archive the ticket                            | `$ticket->archive()`                                 | ✓         |
-| `close`              | `void`    | close the ticket                              | `$ticket->close()`                                   | ✓         |
-| `reopen`             | `void`    | reopen a closed ticket                        | `$ticket->reopen()`                                  | ✓         |
-| `markAsResolved`     | `void`    | mark the ticket as resolved                   | `$ticket->markAsResolved()`                          | ✓         |
-| `markAsLocked`       | `void`    | mark the ticket as locked                     | `$ticket->markAsLocked()`                            | ✓         |
-| `markAsUnlocked`     | `void`    | mark the ticket as unlocked                   | `$ticket->markAsUnlocked()`                          | ✓         |
-| `markAsArchived`     | `void`    | mark the ticket as archived                   | `$ticket->markAsArchived()`                          | ✓         |
-| `closeAsResolved`    | `void`    | close the ticket and marked it as resolved    | `$ticket->closeAsResolved()`                         | ✓         |
-| `closeAsUnresolved`  | `void`    | close the ticket and marked it as unresolved  | `$ticket->closeAsUnresolved()`                       | ✓         |
-| `reopenAsUnresolved` | `void`    | reopen the ticket and marked it as unresolved | `$ticket->reopenAsUnresolved()`                      | ✓         |
-| `isArchived`         | `void`    | check if the ticket archived                  | `$ticket->isArchived()`                              | ✗         |
-| `isOpen`             | `void`    | check if the ticket open                      | `$ticket->isOpen()`                                  | ✗         |
-| `isClosed`           | `void`    | check if the ticket closed                    | `$ticket->isClosed()`                                | ✗         |
-| `isResolved`         | `void`    | check if the ticket has a resolved status     | `$ticket->isResolved()`                              | ✗         |
-| `isUnresolved`       | `void`    | check if the ticket has an unresolved status  | `$ticket->isUnresolved()`                            | ✗         |
-| `isLocked`           | `void`    | check if the ticket is locked                 | `$ticket->isLocked()`                                | ✗         |
-| `isUnlocked`         | `void`    | check if the ticket is unlocked               | `$ticket->isUnlocked()`                              | ✗         |
-| `assignTo`           | `void`    | assign ticket to a user                       | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
+| Method           | Arguments | Description                     | Example                                              | Chainable |
+| ---------------- | --------- | ------------------------------- | ---------------------------------------------------- | --------- |
+| `archive`        | `void`    | archive the ticket              | `$ticket->archive()`                                 | ✓         |
+| `close`          | `void`    | close the ticket                | `$ticket->close()`                                   | ✓         |
+| `reopen`         | `void`    | reopen a closed ticket          | `$ticket->reopen()`                                  | ✓         |
+| `markAsLocked`   | `void`    | mark the ticket as locked       | `$ticket->markAsLocked()`                            | ✓         |
+| `markAsUnlocked` | `void`    | mark the ticket as unlocked     | `$ticket->markAsUnlocked()`                          | ✓         |
+| `markAsArchived` | `void`    | mark the ticket as archived     | `$ticket->markAsArchived()`                          | ✓         |
+| `isArchived`     | `void`    | check if the ticket archived    | `$ticket->isArchived()`                              | ✗         |
+| `isOpen`         | `void`    | check if the ticket open        | `$ticket->isOpen()`                                  | ✗         |
+| `isClosed`       | `void`    | check if the ticket closed      | `$ticket->isClosed()`                                | ✗         |
+| `isLocked`       | `void`    | check if the ticket is locked   | `$ticket->isLocked()`                                | ✗         |
+| `isUnlocked`     | `void`    | check if the ticket is unlocked | `$ticket->isUnlocked()`                              | ✗         |
+| `assignTo`       | `void`    | assign ticket to a user         | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
 
 The __Chainable__ column, is showing the state for the method, that if it can be chained or not, something like
 ```php
     $ticket->archive()
-            ->close()
-            ->markAsResolved();
+            ->close();
 ```
 ### Ticket Relationship API Methods
 The `ticket` model has also a list of methods for interacting with another related models
@@ -218,7 +210,6 @@ The `ticket` model has also a list of scopes to begin filter with.
 | `opened`     | `void`    | get the opened tickets     | `Ticket::opened()->get()`     |
 | `archived`   | `void`    | get the archived tickets   | `Ticket::archived()->get()`   |
 | `unArchived` | `void`    | get the unArchived tickets | `Ticket::unArchived()->get()` |
-| `resolved`   | `void`    | get the resolved tickets   | `Ticket::resolved()->get()`   |
 | `locked`     | `void`    | get the locked tickets     | `Ticket::locked()->get()`     |
 | `unlocked`   | `void`    | get the unlocked tickets   | `Ticket::unlocked()->get()`   |
 

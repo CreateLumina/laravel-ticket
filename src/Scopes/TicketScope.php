@@ -24,22 +24,6 @@ trait TicketScope
     }
 
     /**
-     * Get resolved tickets
-     */
-    public function scopeResolved(Builder $builder): Builder
-    {
-        return $builder->where('is_resolved', true);
-    }
-
-    /**
-     * Get unresolved tickets
-     */
-    public function scopeUnresolved(Builder $builder): Builder
-    {
-        return $builder->where('is_resolved', false);
-    }
-
-    /**
      * Get locked tickets
      */
     public function scopeLocked(Builder $builder): Builder

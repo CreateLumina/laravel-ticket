@@ -29,24 +29,6 @@ it('filters tickets by status', function () {
     $this->assertEquals(Ticket::unArchived()->count(), 10);
 });
 
-it('filters tickets by resolved status', function () {
-    Ticket::factory()
-        ->times(2)
-        ->create([
-            'is_resolved' => true,
-        ]);
-
-    Ticket::factory()
-        ->times(10)
-        ->create([
-            'is_resolved' => false,
-        ]);
-
-    $this->assertEquals(Ticket::count(), 12);
-    $this->assertEquals(Ticket::resolved()->count(), 2);
-    $this->assertEquals(Ticket::unresolved()->count(), 10);
-});
-
 it('filters tickets by locked status', function () {
     Ticket::factory()
         ->times(3)
@@ -103,19 +85,6 @@ it('can check if the ticket is open/closed/archived', function () {
     $this->assertTrue($archivedTicket->isArchived());
 });
 
-it('can check if the ticket is resolved or unresolved', function () {
-    $ticket = Ticket::factory()->create([
-        'is_resolved' => true,
-    ]);
-
-    $anotherTicket = Ticket::factory()->create([
-        'is_resolved' => false,
-    ]);
-
-    $this->assertTrue($ticket->isResolved());
-    $this->assertTrue($anotherTicket->isUnresolved());
-});
-
 it('can mark a ticket as archived', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
@@ -124,16 +93,6 @@ it('can mark a ticket as archived', function () {
     $ticket->markAsArchived();
 
     $this->assertTrue($ticket->isArchived());
-});
-
-it('can mark a ticket as resolved', function () {
-    $ticket = Ticket::factory()->create([
-        'is_resolved' => false,
-    ]);
-
-    $ticket->markAsResolved();
-
-    $this->assertTrue($ticket->isResolved());
 });
 
 it('can mark a ticket as locked', function () {
@@ -156,39 +115,19 @@ it('can mark a ticket as unlocked', function () {
     $this->assertTrue($ticket->isUnlocked());
 });
 
-it('can mark a ticket as closed & resolved', function () {
+it('can mark a ticket as closed', function () {
     $ticket = Ticket::factory()->create([
-        'is_resolved' => false,
         'status' => 'open',
     ]);
 
-    $ticket->closeAsResolved();
-
-    $this->assertTrue($ticket->isResolved());
     $this->assertTrue($ticket->isClosed());
 });
 
-it('can mark a ticket as closed & unresolved', function () {
+it('can mark a ticket as reopened', function () {
     $ticket = Ticket::factory()->create([
-        'is_resolved' => true,
-        'status' => 'open',
-    ]);
-
-    $ticket->closeAsUnresolved();
-
-    $this->assertTrue($ticket->isUnresolved());
-    $this->assertTrue($ticket->isClosed());
-});
-
-it('can mark a ticket as reopened & unresolved', function () {
-    $ticket = Ticket::factory()->create([
-        'is_resolved' => true,
         'status' => 'closed',
     ]);
 
-    $ticket->reopenAsUnresolved();
-
-    $this->assertTrue($ticket->isUnresolved());
     $this->assertTrue($ticket->isOpen());
 });
 
@@ -200,8 +139,6 @@ it('can mark a ticket as locked & unlocked', function () {
     $lockedTicket = Ticket::factory()->create([
         'is_locked' => true,
     ]);
-
-    $ticket->reopenAsUnresolved();
 
     $this->assertTrue($ticket->isUnlocked());
     $this->assertTrue($lockedTicket->isLocked());

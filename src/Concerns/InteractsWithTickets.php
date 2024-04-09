@@ -68,22 +68,6 @@ trait InteractsWithTickets
     }
 
     /**
-     * Determine if the ticket is resolved
-     */
-    public function isResolved(): bool
-    {
-        return $this->is_resolved;
-    }
-
-    /**
-     * Determine if the ticket is unresolved
-     */
-    public function isUnresolved(): bool
-    {
-        return !$this->isResolved();
-    }
-
-    /**
      * Determine if the ticket is locked
      */
     public function isLocked(): bool
@@ -97,18 +81,6 @@ trait InteractsWithTickets
     public function isUnlocked(): bool
     {
         return !$this->isLocked();
-    }
-
-    /**
-     * Mark the ticket as resolved
-     */
-    public function markAsResolved(): self
-    {
-        $this->update([
-            'is_resolved' => true,
-        ]);
-
-        return $this;
     }
 
     /**
@@ -141,45 +113,6 @@ trait InteractsWithTickets
     public function markAsArchived(): self
     {
         $this->archive();
-
-        return $this;
-    }
-
-    /**
-     * Close the ticket and mark it as resolved
-     */
-    public function closeAsResolved(): self
-    {
-        $this->update([
-            'status' => Status::CLOSED->value,
-            'is_resolved' => true,
-        ]);
-
-        return $this;
-    }
-
-    /**
-     * Close the ticket and mark it as unresolved
-     */
-    public function closeAsUnresolved(): self
-    {
-        $this->update([
-            'status' => Status::CLOSED->value,
-            'is_resolved' => false,
-        ]);
-
-        return $this;
-    }
-
-    /**
-     * Reopen the ticket and mark it as resolved
-     */
-    public function reopenAsUnresolved(): self
-    {
-        $this->update([
-            'status' => Status::OPEN->value,
-            'is_resolved' => false,
-        ]);
 
         return $this;
     }
