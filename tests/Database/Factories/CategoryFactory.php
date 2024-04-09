@@ -15,7 +15,6 @@ class CategoryFactory extends Factory
         return [
             'name' => $name = $this->faker->name(),
             'slug' => Str::slug($name),
-            'is_visible' => $this->faker->randomElement([true, false]),
         ];
     }
 }

@@ -24,7 +24,6 @@ This is a custom version for Lumina products. All credits goes to [coderflexx/la
   - [Ticket API Methods](#ticket-api-methods)
   - [Ticket Relationship API Methods](#ticket-relationship-api-methods)
   - [Ticket Scopes](#ticket-scopes)
-  - [Category Scopes](#category-scopes)
 - [Handling File Upload](#handling-file-upload)
 - [Testing](#testing)
 - [Changelog](#changelog)
@@ -156,7 +155,6 @@ public function createCategory()
 | ID          | `integer`   | `NOT NULL` |
 | name        | `string`    | `NULL`     |
 | slug        | `string`    | `NULL`     |
-| is_visible  | `boolean`   | `false`    |
 | created_at  | `timestamp` | `NULL`     |
 | updated_at  | `timestamp` | `NULL`     |
 
@@ -197,11 +195,6 @@ The `ticket` model has also a list of scopes to begin filter with.
 | -------- | --------- | ---------------------- | ------------------------- |
 | `closed` | `void`    | get the closed tickets | `Ticket::closed()->get()` |
 | `opened` | `void`    | get the opened tickets | `Ticket::opened()->get()` |
-
-### Category Scopes
-| Method   | Arguments | Description                  | Example                      |
-| -------- | --------- | ---------------------------- | ---------------------------- |
-| `hidden` | `void`    | get the hidden model records | `Category::visible()->get()` |
 
 ## Handling File Upload
 This package doesn't come with file upload feature (yet) Instead you can use [laravel-medialibrary](https://github.com/spatie/laravel-medialibrary) by __Spatie__,
