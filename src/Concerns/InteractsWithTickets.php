@@ -8,18 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 trait InteractsWithTickets
 {
     /**
-     * Archive the ticket
-     */
-    public function archive(): self
-    {
-        $this->update([
-            'status' => Status::ARCHIVED->value,
-        ]);
-
-        return $this;
-    }
-
-    /**
      * Close the ticket
      */
     public function close(): self
@@ -44,14 +32,6 @@ trait InteractsWithTickets
     }
 
     /**
-     * Determine if the ticket is archived
-     */
-    public function isArchived(): bool
-    {
-        return $this->status == Status::ARCHIVED->value;
-    }
-
-    /**
      * Determine if the ticket is open
      */
     public function isOpen(): bool
@@ -65,16 +45,6 @@ trait InteractsWithTickets
     public function isClosed(): bool
     {
         return !$this->isOpen();
-    }
-
-    /**
-     * Mark the ticket as archived
-     */
-    public function markAsArchived(): self
-    {
-        $this->archive();
-
-        return $this;
     }
 
     /**

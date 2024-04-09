@@ -166,21 +166,17 @@ public function createCategory()
 ### Ticket API Methods
 The `ticket` model came with handy methods to use, to make your building process easy and fast, and here is the list of the available __API__:
 
-| Method           | Arguments | Description                  | Example                                              | Chainable |
-| ---------------- | --------- | ---------------------------- | ---------------------------------------------------- | --------- |
-| `archive`        | `void`    | archive the ticket           | `$ticket->archive()`                                 | ✓         |
-| `close`          | `void`    | close the ticket             | `$ticket->close()`                                   | ✓         |
-| `reopen`         | `void`    | reopen a closed ticket       | `$ticket->reopen()`                                  | ✓         |
-| `markAsArchived` | `void`    | mark the ticket as archived  | `$ticket->markAsArchived()`                          | ✓         |
-| `isArchived`     | `void`    | check if the ticket archived | `$ticket->isArchived()`                              | ✗         |
-| `isOpen`         | `void`    | check if the ticket open     | `$ticket->isOpen()`                                  | ✗         |
-| `isClosed`       | `void`    | check if the ticket closed   | `$ticket->isClosed()`                                | ✗         |
-| `assignTo`       | `void`    | assign ticket to a user      | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
+| Method     | Arguments | Description                | Example                                              | Chainable |
+| ---------- | --------- | -------------------------- | ---------------------------------------------------- | --------- |
+| `close`    | `void`    | close the ticket           | `$ticket->close()`                                   | ✓         |
+| `reopen`   | `void`    | reopen a closed ticket     | `$ticket->reopen()`                                  | ✓         |
+| `isOpen`   | `void`    | check if the ticket open   | `$ticket->isOpen()`                                  | ✗         |
+| `isClosed` | `void`    | check if the ticket closed | `$ticket->isClosed()`                                | ✗         |
+| `assignTo` | `void`    | assign ticket to a user    | `$ticket->assignTo($user)` or `$ticket->assignTo(2)` | ✓         |
 
 The __Chainable__ column, is showing the state for the method, that if it can be chained or not, something like
 ```php
-    $ticket->archive()
-            ->close();
+    $ticket->close();
 ```
 ### Ticket Relationship API Methods
 The `ticket` model has also a list of methods for interacting with another related models
@@ -199,12 +195,10 @@ The `commentAsUser` accepts a user as a first argument, if it's null, the __auth
 ### Ticket Scopes
 The `ticket` model has also a list of scopes to begin filter with.
 
-| Method       | Arguments | Description                | Example                       |
-| ------------ | --------- | -------------------------- | ----------------------------- |
-| `closed`     | `void`    | get the closed tickets     | `Ticket::closed()->get()`     |
-| `opened`     | `void`    | get the opened tickets     | `Ticket::opened()->get()`     |
-| `archived`   | `void`    | get the archived tickets   | `Ticket::archived()->get()`   |
-| `unArchived` | `void`    | get the unArchived tickets | `Ticket::unArchived()->get()` |
+| Method   | Arguments | Description            | Example                   |
+| -------- | --------- | ---------------------- | ------------------------- |
+| `closed` | `void`    | get the closed tickets | `Ticket::closed()->get()` |
+| `opened` | `void`    | get the opened tickets | `Ticket::opened()->get()` |
 
 ### Category Scopes
 | Method   | Arguments | Description                  | Example                      |
