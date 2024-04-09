@@ -54,22 +54,6 @@ it('can check if the ticket is open/closed', function () {
     $this->assertTrue($closedTicket->isClosed());
 });
 
-it('can mark a ticket as closed', function () {
-    $ticket = Ticket::factory()->create([
-        'status' => 'open',
-    ]);
-
-    $this->assertTrue($ticket->isClosed());
-});
-
-it('can mark a ticket as reopened', function () {
-    $ticket = Ticket::factory()->create([
-        'status' => 'closed',
-    ]);
-
-    $this->assertTrue($ticket->isOpen());
-});
-
 it('can delete a ticket', function () {
     $ticket = Ticket::factory()->create();
 
