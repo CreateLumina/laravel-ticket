@@ -7,24 +7,24 @@ use Lumina\Tickets\Enums\Status;
 trait InteractsWithTickets
 {
     /**
-     * Close the ticket
+     * Open the ticket
      */
-    public function close(): self
+    public function open(): self
     {
         $this->update([
-            'status' => Status::CLOSED->value,
+            'status' => Status::OPEN->value,
         ]);
 
         return $this;
     }
 
     /**
-     * Reopen the ticket
+     * Close the ticket
      */
-    public function reopen(): self
+    public function close(): self
     {
         $this->update([
-            'status' => Status::OPEN->value,
+            'status' => Status::CLOSED->value,
         ]);
 
         return $this;

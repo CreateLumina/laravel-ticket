@@ -159,7 +159,7 @@ The `ticket` model came with handy methods to use, to make your building process
 | Method     | Arguments | Description                | Example               |
 | ---------- | --------- | -------------------------- | --------------------- |
 | `close`    | `void`    | close the ticket           | `$ticket->close()`    |
-| `reopen`   | `void`    | reopen a closed ticket     | `$ticket->reopen()`   |
+| `open`     | `void`    | open a closed ticket       | `$ticket->open()`     |
 | `lock`     | `void`    | lock the ticket            | `$ticket->lock()`     |
 | `isOpen`   | `void`    | check if the ticket open   | `$ticket->isOpen()`   |
 | `isClosed` | `void`    | check if the ticket closed | `$ticket->isClosed()` |

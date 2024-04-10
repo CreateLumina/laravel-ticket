@@ -27,6 +27,16 @@ it('filters tickets by status', function () {
     $this->assertEquals(Ticket::locked()->count(), 5);
 });
 
+it('can open the ticket', function () {
+    $ticket = Ticket::factory()->create([
+        'status' => 'closed',
+    ]);
+
+    $ticket->open();
+
+    $this->assertEquals($ticket->status, 'open');
+});
+
 it('can close the ticket', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
@@ -35,16 +45,6 @@ it('can close the ticket', function () {
     $ticket->close();
 
     $this->assertEquals($ticket->status, 'closed');
-});
-
-it('can reopen the ticket', function () {
-    $ticket = Ticket::factory()->create([
-        'status' => 'closed',
-    ]);
-
-    $ticket->reopen();
-
-    $this->assertEquals($ticket->status, 'open');
 });
 
 it('can lock the ticket', function () {
