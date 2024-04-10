@@ -57,7 +57,7 @@ it('can create a message inside the ticket by authenticated user', function () {
 });
 
 it('can create a message inside the ticket by another user', function () {
-    $this->actingAs($user = User::factory()->create());
+    $this->actingAs(User::factory()->create());
     $anotherUser = User::factory()->create();
 
     $ticket = Ticket::factory()->create();
