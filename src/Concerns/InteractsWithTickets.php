@@ -55,7 +55,7 @@ trait InteractsWithTickets
      */
     public function isClosed(): bool
     {
-        return !$this->isOpen();
+        return ! $this->isOpen();
     }
 
     /**
