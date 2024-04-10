@@ -156,17 +156,15 @@ public function createCategory()
 ### Ticket API Methods
 The `ticket` model came with handy methods to use, to make your building process easy and fast, and here is the list of the available __API__:
 
-| Method     | Arguments | Description                | Example               | Chainable |
-| ---------- | --------- | -------------------------- | --------------------- | --------- |
-| `close`    | `void`    | close the ticket           | `$ticket->close()`    | ✓         |
-| `reopen`   | `void`    | reopen a closed ticket     | `$ticket->reopen()`   | ✓         |
-| `isOpen`   | `void`    | check if the ticket open   | `$ticket->isOpen()`   | ✗         |
-| `isClosed` | `void`    | check if the ticket closed | `$ticket->isClosed()` | ✗         |
+| Method     | Arguments | Description                | Example               |
+| ---------- | --------- | -------------------------- | --------------------- |
+| `close`    | `void`    | close the ticket           | `$ticket->close()`    |
+| `reopen`   | `void`    | reopen a closed ticket     | `$ticket->reopen()`   |
+| `lock`     | `void`    | lock the ticket            | `$ticket->lock()`     |
+| `isOpen`   | `void`    | check if the ticket open   | `$ticket->isOpen()`   |
+| `isClosed` | `void`    | check if the ticket closed | `$ticket->isClosed()` |
+| `isLocked` | `void`    | check if the ticket locked | `$ticket->isLocked()` |
 
-The __Chainable__ column, is showing the state for the method, that if it can be chained or not, something like
-```php
-    $ticket->close();
-```
 ### Ticket Relationship API Methods
 The `ticket` model has also a list of methods for interacting with another related models
 
@@ -186,8 +184,9 @@ The `ticket` model has also a list of scopes to begin filter with.
 
 | Method   | Arguments | Description            | Example                   |
 | -------- | --------- | ---------------------- | ------------------------- |
-| `closed` | `void`    | get the closed tickets | `Ticket::closed()->get()` |
 | `opened` | `void`    | get the opened tickets | `Ticket::opened()->get()` |
+| `closed` | `void`    | get the closed tickets | `Ticket::closed()->get()` |
+| `locked` | `void`    | get the locked tickets | `Ticket::locked()->get()` |
 
 ## Handling File Upload
 This package doesn't come with file upload feature (yet) Instead you can use [laravel-medialibrary](https://github.com/spatie/laravel-medialibrary) by __Spatie__,

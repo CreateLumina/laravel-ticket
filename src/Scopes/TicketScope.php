@@ -8,6 +8,14 @@ use Lumina\Tickets\Enums\Status;
 trait TicketScope
 {
     /**
+     * Get opened tickets
+     */
+    public function scopeOpened(Builder $builder): Builder
+    {
+        return $builder->where('status', Status::OPEN->value);
+    }
+
+    /**
      * Get closed tickets
      */
     public function scopeClosed(Builder $builder): Builder
@@ -18,8 +26,8 @@ trait TicketScope
     /**
      * Get opened tickets
      */
-    public function scopeOpened(Builder $builder): Builder
+    public function scopeLocked(Builder $builder): Builder
     {
-        return $builder->where('status', Status::OPEN->value);
+        return $builder->where('status', Status::LOCKED->value);
     }
 }

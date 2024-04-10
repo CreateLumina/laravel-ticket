@@ -15,9 +15,16 @@ it('filters tickets by status', function () {
             'status' => 'closed',
         ]);
 
-    $this->assertEquals(Ticket::count(), 10);
+    Ticket::factory()
+        ->times(5)
+        ->create([
+            'status' => 'locked',
+        ]);
+
+    $this->assertEquals(Ticket::count(), 15);
     $this->assertEquals(Ticket::opened()->count(), 3);
     $this->assertEquals(Ticket::closed()->count(), 7);
+    $this->assertEquals(Ticket::locked()->count(), 5);
 });
 
 it('can close the ticket', function () {
@@ -40,6 +47,16 @@ it('can reopen the ticket', function () {
     $this->assertEquals($ticket->status, 'open');
 });
 
+it('can lock the ticket', function () {
+    $ticket = Ticket::factory()->create([
+        'status' => 'open',
+    ]);
+
+    $ticket->lock();
+
+    $this->assertEquals($ticket->status, 'locked');
+});
+
 it('can check if the ticket is open/closed', function () {
     $ticket = Ticket::factory()->create([
         'status' => 'open',
@@ -49,8 +66,13 @@ it('can check if the ticket is open/closed', function () {
         'status' => 'closed',
     ]);
 
+    $lockedTicket = Ticket::factory()->create([
+        'status' => 'locked',
+    ]);
+
     $this->assertTrue($ticket->isOpen());
     $this->assertTrue($closedTicket->isClosed());
+    $this->assertTrue($lockedTicket->isLocked());
 });
 
 it('can delete a ticket', function () {
