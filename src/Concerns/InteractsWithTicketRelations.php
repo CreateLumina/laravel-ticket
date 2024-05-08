@@ -35,16 +35,8 @@ trait InteractsWithTicketRelations
      */
     public function message(string $message): Model
     {
-        return $this->messageAsUser(auth()->user(), $message);
-    }
-
-    /**
-     * Add new message on an existing ticket as a custom user
-     */
-    public function messageAsUser(?Model $user, string $message): Model
-    {
         return $this->messages()->create([
-            'user_id' => $user?->id ?? auth()->id(), // @phpstan-ignore-line
+            'user_id' => auth()->user()->id,
             'message' => $message,
         ]);
     }

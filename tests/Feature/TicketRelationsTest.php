@@ -55,26 +55,3 @@ it('can create a message inside the ticket by authenticated user', function () {
 
     $this->assertEquals($ticket->messages->count(), 1);
 });
-
-it('can create a message inside the ticket by another user', function () {
-    $this->actingAs(User::factory()->create());
-    $anotherUser = User::factory()->create();
-
-    $ticket = Ticket::factory()->create();
-
-    $ticket->messageAsUser($anotherUser, 'How are you today?');
-
-    $this->assertEquals($ticket->messages->count(), 1);
-    $this->assertEquals($ticket->messages->first()->user_id, $anotherUser->id);
-});
-
-it('associate a comment ticket to the current user, if no user are defined', function () {
-    $this->actingAs($user = User::factory()->create());
-
-    $ticket = Ticket::factory()->create();
-
-    $ticket->messageAsUser(null, 'How are you today?');
-
-    $this->assertEquals($ticket->messages->count(), 1);
-    $this->assertEquals($ticket->messages->first()->user_id, $user->id);
-});

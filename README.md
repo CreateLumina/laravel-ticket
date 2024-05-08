@@ -166,12 +166,11 @@ The `ticket` model came with handy methods to use, to make your building process
 ### Ticket Relationship API Methods
 The `ticket` model has also a list of methods for interacting with another related models
 
-| Method             | Arguments                                    | Description                                               | Example                                                  |
-| ------------------ | -------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------- |
-| `attachCategories` | `mixed` ID, `array` attributes, `bool` touch | associate categories into an existing ticket              | `$ticket->attachCategories([1,2,3,4])`                   |
-| `syncCategories`   | `Model/array` IDs, `bool` detouching         | associate categories into an existing ticket              | `$ticket->syncCategories([1,2,3,4])`                     |
-| `message`          | `string` message                             | add new message on an existing ticket                     | `$ticket->message('A message in a ticket')`              |
-| `messageAsUser`    | `Model/null` user, `string` message          | add new message on an existing ticket as a different user | `$ticket->messageAsUser($user, 'A message in a ticket')` |
+| Method             | Arguments                                    | Description                                  | Example                                     |
+| ------------------ | -------------------------------------------- | -------------------------------------------- | ------------------------------------------- |
+| `attachCategories` | `mixed` ID, `array` attributes, `bool` touch | associate categories into an existing ticket | `$ticket->attachCategories([1,2,3,4])`      |
+| `syncCategories`   | `Model/array` IDs, `bool` detouching         | associate categories into an existing ticket | `$ticket->syncCategories([1,2,3,4])`        |
+| `message`          | `string` message                             | add new message on an existing ticket        | `$ticket->message('A message in a ticket')` |
 
 > The `attachCategories` and `syncCategories` methods, is an alternative for `attach` and `sync` laravel methods, and if you want to learn more, please take a look at this [link](https://laravel.com/docs/9.x/eloquent-relationships#attaching-detaching)
 
