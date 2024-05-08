@@ -160,10 +160,8 @@ The `ticket` model came with handy methods to use, to make your building process
 | ---------- | --------- | -------------------------- | --------------------- |
 | `close`    | `void`    | close the ticket           | `$ticket->close()`    |
 | `open`     | `void`    | open a closed ticket       | `$ticket->open()`     |
-| `lock`     | `void`    | lock the ticket            | `$ticket->lock()`     |
 | `isOpen`   | `void`    | check if the ticket open   | `$ticket->isOpen()`   |
 | `isClosed` | `void`    | check if the ticket closed | `$ticket->isClosed()` |
-| `isLocked` | `void`    | check if the ticket locked | `$ticket->isLocked()` |
 
 ### Ticket Relationship API Methods
 The `ticket` model has also a list of methods for interacting with another related models
@@ -186,7 +184,6 @@ The `ticket` model has also a list of scopes to begin filter with.
 | -------- | --------- | ---------------------- | ------------------------- |
 | `opened` | `void`    | get the opened tickets | `Ticket::opened()->get()` |
 | `closed` | `void`    | get the closed tickets | `Ticket::closed()->get()` |
-| `locked` | `void`    | get the locked tickets | `Ticket::locked()->get()` |
 
 ## Handling File Upload
 This package doesn't come with file upload feature (yet) Instead you can use [laravel-medialibrary](https://github.com/spatie/laravel-medialibrary) by __Spatie__,

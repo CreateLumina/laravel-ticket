@@ -22,12 +22,4 @@ trait TicketScope
     {
         return $builder->where('status', Status::CLOSED->value);
     }
-
-    /**
-     * Get opened tickets
-     */
-    public function scopeLocked(Builder $builder): Builder
-    {
-        return $builder->where('status', Status::LOCKED->value);
-    }
 }

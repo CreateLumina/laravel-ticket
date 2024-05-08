@@ -31,18 +31,6 @@ trait InteractsWithTickets
     }
 
     /**
-     * Lock the ticket
-     */
-    public function lock(): self
-    {
-        $this->update([
-            'status' => Status::LOCKED->value,
-        ]);
-
-        return $this;
-    }
-
-    /**
      * Determine if the ticket is open
      */
     public function isOpen(): bool
@@ -56,13 +44,5 @@ trait InteractsWithTickets
     public function isClosed(): bool
     {
         return ! $this->isOpen();
-    }
-
-    /**
-     * Determine if the ticket is locked
-     */
-    public function isLocked(): bool
-    {
-        return $this->status == Status::LOCKED->value;
     }
 }
