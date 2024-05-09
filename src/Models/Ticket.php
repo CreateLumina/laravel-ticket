@@ -66,6 +66,17 @@ class Ticket extends Model
     }
 
     /**
+     * Get Members RelationShip
+     */
+    public function members(): HasMany
+    {
+        return $this->hasMany(
+            Member::class,
+            (string) 'ticket_id',
+        );
+    }
+
+    /**
      * Get the table associated with the model.
      *
      * @return string
@@ -73,5 +84,23 @@ class Ticket extends Model
     public function getTable()
     {
         return 'tickets';
+    }
+
+    /**
+     * Add a member to the ticket.
+     */
+    public function addMember(int $user_id): void
+    {
+        $member = new Member();
+        $member->user_id = $user_id;
+        $this->members()->save($member);
+    }
+
+    /**
+     * Remove a member from the ticket.
+     */
+    public function removeMember(int $user_id): void
+    {
+        $this->members()->where('user_id', $user_id)->delete();
     }
 }
